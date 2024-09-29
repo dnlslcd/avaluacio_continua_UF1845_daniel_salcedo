@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <header>
+        <%- include('./partials/header.ejs') %>
+    </header> -->
+    <!-- <h1>
+        <%= apartment._id? 'Edit' : 'Add New' %> Apartment
+    </h1> -->
+    <main class="container">
+        <form action="/admin/apartment/new-apartment" method="POST">
+            <input type="hidden" name="id" id="id" value="<%= apartment._id %>">
+            <label for="title">Título</label>
+
+            <input type="text" name="title" id="title" required maxlength="30" value="<%= apartment.title %>">
+            <label for="description">Descripción</label>
+            <textarea rows="5" name="description" id="description"><%= apartment.description %> </textarea>
+            <!-- TODO: Precargar todos los campos que nos faltan del formulario: price, size, etc.-->
+            <label for="price">Precio por noche</label>
+            <input type="number" name="price" id="price" required min="0" value="<%= apartment.price %>">
+            <label for="size">M <sup>2</sup></label>
+            <input type="number" name="size" id="size" required min="0" value="<%= apartment.size %>">
+            <label for="mainPhoto">Foto principal</label>
+            <input type="url" name="mainPhoto" id="mainPhoto" required value="<%= apartment.mainPhoto  %>">
+            <!-- TODO: Añadir nuevo cuando estemos en añadir apartmento. Pero al editar apartamento debería leerse "Guardar cambios"-->
+            <input type="submit" value="<%= apartment._id? 'Guardar Cambios': 'Añadir nuevo' %>">
+        </form>
+    </main></body>
+</html>
