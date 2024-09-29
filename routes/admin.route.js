@@ -9,5 +9,8 @@ const adminControllers = require('../controllers/admin.controller')
 
 // crear primer endpoint de admin que muestre un formulario para añadir un nuevo apartamento
 router.get('/apartment/new-apartment', adminControllers.getNewApartmentForm);
+router.post('/apartment/new-apartment', adminControllers.postNewApartment)
+
+
 
 module.exports = router;
