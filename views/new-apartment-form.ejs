@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Apartment Form</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <%- include('partials/head') %>
 </head>
 <body>
+    <%- include('partials/header') %>
    <h1> Add New Apartment</h1>
     <main class="container">
         <form action="/admin/apartment/new-apartment" method="POST">
@@ -43,6 +42,7 @@
             <input type="submit" value="Añadir nuevo">
         </form>
     </main>
+    <%- include('partials/footer') %>
 </body>
 </html>
 
