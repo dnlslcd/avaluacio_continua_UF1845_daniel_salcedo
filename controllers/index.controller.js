@@ -14,7 +14,17 @@ const getApartments = async (req, res) => {
     });
 }
 
+const getApartmentById = async (req, res) => {
+    // en el modelo obtengo el apartamento dado su id
+    const { idApartment } = req.params;
+
+    const selectedApartment = await Apartment.findById(idApartment);
+
+    res.render('detailed-view-apartment');
+};
+
 // Aquí module.exports exporta más de un recurso, como si fuera un objeto
 module.exports = {
-    getApartments
+    getApartments,
+    getApartmentById
 }

@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
 </head>
 <body>
     <h1>Welcome to the Tribook Homepage</h1>
     <main class="container apartments">
         <% for (const ap of apartments) { %>
+        <a href="/apartment/<%= ap._id %>">
         <article class="apartment">
             <header>
                 <%= ap.title %>
@@ -20,6 +23,7 @@
                 <%= ap.price %> €/night
             </footer>
         </article>
+         </a>
     <% } %>
     </main>
 </body>
