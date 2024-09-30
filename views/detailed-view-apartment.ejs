@@ -8,11 +8,12 @@
 </head>
 <body>
     <article class="container">
-    <h1>titulo del apt</h1>
-    <header>precio por noche</header>
-    <img src="" alt="">
-    <div>descricion apt</div>
-    <footer>metros cuadrasos</footer>
+    <h1><%= selectedApartment.title %></h1>
+    <header><%= selectedApartment.price %> €</header>
+    <div><%= selectedApartment.description %></div>
+    <img src="<%= selectedApartment.mainPhoto %>" alt="">
+    <div><%= selectedApartment.size %> m<sup>2</sup></div>
+    
     </article>
 </body>
 </html>

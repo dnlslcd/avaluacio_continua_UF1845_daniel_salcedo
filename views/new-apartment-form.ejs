@@ -12,16 +12,62 @@
         <form action="/admin/apartment/new-apartment" method="POST">
             <label for="title">Title</label>
             <input type="text" name="title" id="title" required maxlength="30">
+
             <label for="description">Description</label>
             <textarea rows="5" name="description" id="description" required></textarea>
+
             <label for="price">Price per night</label>
             <input type="number" name="price" id="price" required min="0">
+
             <label for="size">M <sup>2</sup></label>
             <input type="number" name="size" id="size" required min="0">
+
             <label for="mainPhoto">Main Photo</label>
             <input type="url" name="mainPhoto" id="mainPhoto" required>
+    
+            <label for="number-rooms">Number of rooms</label>
+            <input type="number" name="number-rooms" id="number-rooms" required min="0">
+
+            <label for="number-total-beds">Number of total beds</label>
+            <input type="number" name="number-total-beds" id="number-total-beds" required min="0">
+
+            <label for="number-bathrooms">Number of bathrooms</label>
+            <input type="number" name="number-bathrooms" id="number-bathrooms" required min="0">
+
+            <label for="max-capability">Max. Capability</label>
+            <input type="number" name="number-capability" id="number-capability" required min="0">
+
+            <label for="house-rules">House rules</label>
+            <textarea rows="5" name="house-rules" id="house-rules" required></textarea>
+
             <input type="submit" value="Añadir nuevo">
         </form>
     </main>
 </body>
 </html>
+
+<!-- 
+-Un título para atraer la atención del cliente YA
+-Descripción del apartamento YA
+-Normas de uso del apartamento
+-El número de habitaciones YA
+-El número de camas que tiene cada habitación (o número total de camas si no se quiere complicar tanto) YA
+-El número de baños YA
+-Fotografías del apartamento. Máximo 4.
+-Para cada fotografía, se desea un texto que especifique a qué parte del apartamento pertenece la foto.
+-Una de las fotos debe ser marcada como “foto principal”. YA
+-El precio por día. YA
+-El número máximo de personas para las que se puede alquilar el apartamento YA
+-Los metros cuadrados de superficie útil YA
+-Qué servicios tiene
+   -Aire acondicionado
+   -Calefacción
+   -Si el edificio está adaptado para personas con movilidad reducida
+   -Televisión
+   -Cocina
+   -Conexión a Internet
+-Ubicación del apartamento
+   -Provincia
+   -Ciudad 
+   -Coordenadas GPS 
+   -->
