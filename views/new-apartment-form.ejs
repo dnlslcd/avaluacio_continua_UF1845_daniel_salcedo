@@ -10,13 +10,15 @@
    <h1> Add New Apartment</h1>
     <main class="container">
         <form action="/admin/apartment/new-apartment" method="POST">
-            <label for="title">Título</label>
+            <label for="title">Title</label>
             <input type="text" name="title" id="title" required maxlength="30">
-            <label for="price">Precio por noche</label>
+            <label for="description">Description</label>
+            <input type="text" name="description" id="description" required>
+            <label for="price">Price per night</label>
             <input type="number" name="price" id="price" required min="0">
             <label for="size">M <sup>2</sup></label>
             <input type="number" name="size" id="size" required min="0">
-            <label for="mainPhoto">Foto principal</label>
+            <label for="mainPhoto">Main Photo</label>
             <input type="url" name="mainPhoto" id="mainPhoto" required>
             <input type="submit" value="Añadir nuevo">
         </form>
