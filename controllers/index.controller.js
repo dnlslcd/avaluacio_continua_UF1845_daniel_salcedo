@@ -25,8 +25,25 @@ const getApartmentById = async (req, res) => {
     });
 };
 
+const searchApartments = async (req, res) => {
+    // parsear la query string que recibo del formulario
+    const { maxPrice } = req.query;
+
+    // obtener del modelo los apts cuyo precio sea menor al deaseado por el usuario
+
+    // pasarle a la vista los apts filtrados
+    const apartments = await Apartment.find({
+        price: {$lte: maxPrice}
+    });
+
+    res.render('home', {
+        apartments
+    });
+};
+
 // Aquí module.exports exporta más de un recurso, como si fuera un objeto
 module.exports = {
     getApartments,
-    getApartmentById
+    getApartmentById,
+    searchApartments
 }

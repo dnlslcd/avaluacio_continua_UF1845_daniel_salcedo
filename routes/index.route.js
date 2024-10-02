@@ -12,5 +12,8 @@ router.get('/', indexControllers.getApartments);
 // ruta dinamica de detalle del apartamento
 router.get('/apartment/:idApartment', indexControllers.getApartmentById);
 
+// ruta para el /search
+router.get('/search', indexControllers.searchApartments);
+
 // Exportar las rutas para que se puedan usar en app.js
 module.exports = router;
