@@ -10,6 +10,8 @@ const adminControllers = require('../controllers/admin.controller')
 router.get('/apartment/new-apartment', adminControllers.getNewApartmentForm);
 router.post('/apartment/new-apartment', adminControllers.postNewApartment)
 
-
+// EDITAR apt
+// 1. ruta /admin/apartment/:idApartment/edit
+router.get('/apartment/:idApartment/edit', adminControllers.updateById);
 
 module.exports = router;

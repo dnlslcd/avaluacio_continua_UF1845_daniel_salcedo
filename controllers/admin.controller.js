@@ -5,6 +5,17 @@ const getNewApartmentForm = (req, res) => {
 }
 
 const postNewApartment = async (req, res) => {
+    
+    // EDITAR apt
+    // 4. como detecto si estoy añadiendo o editando un apt? Si lo estoy editando ya tengo el _id
+    const { id } = req.body;
+   
+    if (id) {
+        // 1. buscar el doc en la bbdd a partir de su id y actualizar sus campos a partir del req.body
+        
+        res.send('Apartamento actualizado');
+        return
+    };
     await Apartment.create({
         title: req.body.title,
         description: req.body.description,

@@ -9,35 +9,41 @@
    <h1> Add New Apartment</h1>
     <main class="container">
         <form action="/admin/apartment/new-apartment" method="POST">
+        
+        <!-- EDITAR apt -->
+        <!-- 3. añadir input oculto para atrapar el valor del "_id" -->
+            <input type="hidden" name="id" id="id" value="<%= apartment.id %>">
+
+        <!-- 2. mostrar mediante el atributo value y plantillas ejs el valor predeterminado (ya guardado) de los campos del form -->
             <label for="title">Title</label>
-            <input type="text" name="title" id="title" required maxlength="30">
+            <input type="text" name="title" id="title" required maxlength="30" value="<%= apartment.title %>">
 
             <label for="description">Description</label>
-            <textarea rows="3" name="description" id="description" required></textarea>
+            <textarea rows="3" name="description" id="description" required><%= apartment.description %></textarea>
 
             <label for="price">Price per night</label>
-            <input type="number" name="price" id="price" required min="0">
+            <input type="number" name="price" id="price" required min="0" value="<%= apartment.price %>">
 
             <label for="size">M <sup>2</sup></label>
-            <input type="number" name="size" id="size" required min="0">
+            <input type="number" name="size" id="size" required min="0" value="<%= apartment.size %>">
 
             <label for="mainPhoto">Main Photo</label>
-            <input type="url" name="mainPhoto" id="mainPhoto" required>
+            <input type="url" name="mainPhoto" id="mainPhoto" required value="<%= apartment.mainPhoto %>">
     
             <label for="numberRooms">Nº of rooms</label>
-            <input type="number" name="numberRooms" id="numberRooms" required min="0">
+            <input type="number" name="numberRooms" id="numberRooms" required min="0" value="<%= apartment.numberRooms %>">
 
             <label for="numberTotalBeds">Nº of total beds</label>
-            <input type="number" name="numberTotalBeds" id="numberTotalBeds" required min="0">
+            <input type="number" name="numberTotalBeds" id="numberTotalBeds" required min="0" value="<%= apartment.numberTotalBeds %>">
 
             <label for="numberBathrooms">Nº of bathrooms</label>
-            <input type="number" name="numberBathrooms" id="numberBathrooms" required min="0">
+            <input type="number" name="numberBathrooms" id="numberBathrooms" required min="0" value="<%= apartment.numberBathrooms %>">
 
             <label for="maxCapacity">Max. Capacity</label>
-            <input type="number" name="maxCapacity" id="maxCapacity" required min="0">
+            <input type="number" name="maxCapacity" id="maxCapacity" required min="0" value="<%= apartment.maxCapacity %>">
 
             <label for="houseRules">House rules</label>
-            <textarea rows="4" name="houseRules" id="houseRules" required></textarea>
+            <textarea rows="4" name="houseRules" id="houseRules" required><%= apartment.houseRules %></textarea>
 
             <input type="submit" value="Añadir nuevo">
         </form>
