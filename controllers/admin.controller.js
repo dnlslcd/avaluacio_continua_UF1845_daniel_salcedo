@@ -1,7 +1,10 @@
 const Apartment = require("../models/apartment.model");
 
 const getApartmentForm = (req, res) => {
-    res.render('new-apartment-form');
+    
+    res.render('new-apartment-form', {
+        apartment: {}
+    });
 }
 
 // EDITAR apt. Versión 1) usando una funcion distinta a getNewApartmentForm
