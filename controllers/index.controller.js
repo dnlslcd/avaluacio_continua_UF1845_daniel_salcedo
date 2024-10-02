@@ -1,4 +1,4 @@
-// Aquí se crean funciones que den respuestas a las rutas
+// Aquí se crean las funciones que darán respuesta a las rutas
 
 
 // importamos el modelo
@@ -14,9 +14,11 @@ const getApartments = async (req, res) => {
     });
 }
 
+// búsqueda por id
 const getApartmentById = async (req, res) => {
     // en el modelo obtengo el apartamento dado su id
     const { idApartment } = req.params;
+console.log(idApartment);
 
     const selectedApartment = await Apartment.findById(idApartment);
 

@@ -12,7 +12,7 @@
         
         <!-- EDITAR apt -->
         <!-- 3. añadir input oculto para atrapar el valor del "_id" -->
-            <input type="hidden" name="id" id="id" value="<%= apartment.id %>">
+            <input type="hidden" name="id" id="id" value="<%= apartment._id %>">
 
         <!-- 2. mostrar mediante el atributo value y plantillas ejs el valor predeterminado (ya guardado) de los campos del form -->
             <label for="title">Title</label>
@@ -80,11 +80,8 @@
                 </li>
             </ul>
 
-
-
-
-
-            <input type="submit" value="Añadir nuevo">
+            <!-- 2.1. mostrar nuevo botón cuando la vista sea de editar apt-->
+            <input type="submit" value="<%= apartment.id? 'Save Changes' : 'Add New Apartment' %>">
         </form>
     </main>
     <%- include('partials/footer') %>
