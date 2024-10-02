@@ -4,7 +4,7 @@ const getApartmentForm = (req, res) => {
     res.render('new-apartment-form');
 }
 
-// EDITAR apt. Versión usando una funcion distinta a getNewApartmentForm
+// EDITAR apt. Versión 1) usando una funcion distinta a getNewApartmentForm
 const getEditApartmentForm = async (req, res) => {
         // 1. recuperar el apt identificado por su idApartment (tiene que ser el mismo nombre que aparece en la ruta despues de los : "/apartment/:idApartment/edit") en la bbd
         const { idApartment } = req.params;
