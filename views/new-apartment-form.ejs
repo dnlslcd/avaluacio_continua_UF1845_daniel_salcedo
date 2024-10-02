@@ -45,6 +45,45 @@
             <label for="houseRules">House rules</label>
             <textarea rows="4" name="houseRules" id="houseRules" required><%= apartment.houseRules %></textarea>
 
+            <label for="services">Services</label>
+            <ul>
+                <li>
+                    <input type="checkbox" name="services" id="WiFi">
+                    <label for="WiFi">Wi-Fi</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="services" id="airConditioner">
+                    <label for="airConditioning">Air Conditioning</label>
+
+                </li>
+                <li>
+                    <input type="checkbox" name="services" id="kitchen">
+                    <label for="kitchen">Kitchen</label>
+
+                </li>
+                <li>
+                    <input type="checkbox" name="services" id="disabilityInclusive">
+                    <label for="disabilityInclusive">Disability inclusive</label>
+
+                </li>
+                <li>
+
+                    <input type="checkbox" name="services" id="heating">
+                    <label for="heating">Heating</label>
+
+                </li>
+                <li>
+
+                    <input type="checkbox" name="services" id="tv">
+                    <label for="tv">TV</label>
+
+                </li>
+            </ul>
+
+
+
+
+
             <input type="submit" value="Añadir nuevo">
         </form>
     </main>
