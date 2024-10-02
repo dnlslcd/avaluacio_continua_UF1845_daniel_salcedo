@@ -25,6 +25,7 @@ const getApartmentById = async (req, res) => {
     });
 };
 
+// BUSCAR apt 3.
 const searchApartments = async (req, res) => {
     // parsear la query string que recibo del formulario
     const { maxPrice } = req.query;
