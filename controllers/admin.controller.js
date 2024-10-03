@@ -32,10 +32,10 @@ const postAddNewApartment = async (req, res) => {
         await Apartment.findByIdAndUpdate(id, req.body);
 
         // 4.2. renderizar de nuevo la vista de editar con un mensaje de éxito, o bien devolver la vista detallada del apt
-        req.flash('success_msg', `Apartment ${req.body.title} edited succesfully.`);
+        // req.flash('success_msg', `Apartment ${req.body.title} edited succesfully.`);
         
         // req.get('referer') -> redirige a la ruta anterior
-        return res.redirect('/');
+        return res.redirect('/apartment/' + id);
     };
 
     await Apartment.create({

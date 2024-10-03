@@ -18,6 +18,8 @@ const app = express();
 // middleware para indicar a Express que queremos hacer peticiones POST
 app.use(express.urlencoded({extended: true}));
 
+
+
 // middleware para que el cliente pueda hacer GETs a los recursos publicos en la carpeta 'public'
 app.use(express.static('public'));
 
@@ -49,23 +51,3 @@ connectDB().catch(err => console.log('Error al conectarse a la base de datos ' +
 app.listen(PORT, (req, res) => {
     console.log('Servidor corriendo en el puerto ' + PORT);
 });
-
-
-// TO DO:
-// 1. Ir a la vista new-apartment.ejs y crear el formulario (con sus validaciones)
-// para añadir un apartmento nuevo (dejad de momento el tema de los services)
-
-
-// 2. En routes/admin.js tenemos que crear un endpoint de tipo POST que va a usar
-// el controlador adminControllers.postNewAparmtnet
-
-
-// 3. En controllers/admin.js tenemos que crear un nuevo controlador (función)
-// para recibir los datos del POST e insertar el documento en la base de datos.
-// El controlador también debe encargarse de responder al cliente si ha conseguido
-// insertar el nuevo apartmento
-
-
-// 4. En controllers/index.js , modificar el controlador getApartments. Tenemos
-// que ir al modelo, obtener todos los apartamentos y renderizar el EJS
-// con todos los apartmentos (for...)
