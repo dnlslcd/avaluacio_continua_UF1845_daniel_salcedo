@@ -1,6 +1,8 @@
 // Crear el esquema del apartamento
 
 const { Schema, model } = require('mongoose');
+const { type } = require('os');
+const { boolean } = require('webidl-conversions');
 
 
 const apartmentSchema = new Schema({
@@ -26,13 +28,17 @@ const apartmentSchema = new Schema({
         required: true,
     },
     services: {
-        WiFi: Boolean,
-        airConditioning: Boolean,
-        kitchen: Boolean,
-        disabilityInclusive: Boolean,
-        heating: Boolean,
-        tv: Boolean
-    }
+        type: Object,
+        default: {
+            WiFi: {type: Boolean, default: false},
+            airConditioning: {type: Boolean, default: false},
+            kitchen: {type: Boolean, default: false},
+            disabilityInclusive: {type: Boolean, default: false},
+            heating: {type: Boolean, default: false},
+            tv: {type: Boolean, default: false}            
+        }
+        
+}
     // services: {
     //     type: [String], // enum
     //     validate: {

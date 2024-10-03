@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>Detailed View Apartment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <%- include('partials/head') %>
 </head>
 <body>
@@ -12,7 +13,28 @@
     <div><%= selectedApartment.description %></div>
     <img src="<%= selectedApartment.mainPhoto %>" alt="">
     <div><%= selectedApartment.size %> m<sup>2</sup></div>
-    
+    <div>
+        <h3>Servicios disponibles</h3>
+        <ul>
+          <% const serviceIcons = {
+            'Wi-Fi': 'fa-wifi',
+            'airConditioning': 'fa-snowflake-o',
+            'heating': 'fa-fire',
+            'tv': 'fa-tv',
+            'kitchen': 'fa-cutlery',
+            'disabilityInclusive': 'fa-wheelchair'
+            } %>
+          <% for (var service in selectedApartment.services) { %>
+            <li>
+              <i class="fa <%= serviceIcons[service] %>"></i>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+    <button type="button" class="btn btn-primary" 
+    onclick="location.href='/admin/apartment/<%= selectedApartment._id %>/edit'">
+    Edit Apartment
+    </button>
     </article>
     <%- include('partials/footer') %>
 </body>

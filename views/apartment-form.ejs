@@ -8,9 +8,9 @@
     <%- include('partials/header') %>
    <h1><%= apartment._id? 'Edit' : 'New' %> Apartment</h1>
     <main class="container">
-        <form action="/admin/apartment/new-apartment" method="POST">
+        <form action="/admin/apartment/apartment-form" method="POST">
         
-        <!-- EDITAR apt -->
+        <!-- EDITAR apt Versión 2 -->
         <!-- 3. añadir input oculto para atrapar el valor del "_id" -->
             <input type="hidden" name="id" id="id" value="<%= apartment._id %>">
 
@@ -46,9 +46,23 @@
             <textarea rows="4" name="houseRules" id="houseRules" required><%= apartment.houseRules %></textarea>
 
             <label for="services">Services</label>
+            <% function capitalizeService(service) {
+                if (service.indexOf(' ') === -1) {
+                  return service.charAt(0).toUpperCase() + service.slice(1);
+                } else {
+                  return service.replace(/\b\w/g, function (m) { return m.toUpperCase(); });
+                }
+              } %>
+
             <ul>
-                <li>
-                    <input type="checkbox" name="services" id="WiFi">
+                <% for (var service of Object.keys(apartment.services)) { %>
+                    <li>
+                      <input type="checkbox" name="services" id="<%= service %>" value="<%= service %>" <%= apartment.services[service] ? 'checked' : '' %>>
+                      <label for="<%= service %>"><%= capitalizeService(service) %></label>
+                    </li>
+                  <% } %>
+                <!-- <li>
+                    <input type="checkbox" name="services" id="WiFi" value="Wi-Fi" < %= apartment.services[0].isPresent ? 'checked' : '' %>>
                     <label for="WiFi">Wi-Fi</label>
                 </li>
                 <li>
@@ -77,7 +91,7 @@
                     <input type="checkbox" name="services" id="tv">
                     <label for="tv">TV</label>
 
-                </li>
+                </li> -->
             </ul>
 
             <!-- 2.1. mostrar nuevo botón cuando la vista sea de editar apt-->
