@@ -6,6 +6,7 @@
 </head>
 <body>
     <%- include('partials/header') %>
+
     <article class="container">
     <h1><%= selectedApartment.title %></h1>
     <header><%= selectedApartment.price %> €</header>
@@ -30,11 +31,12 @@
           <% } %>
         </ul>
       </div>
-    <button type="button" class="btn btn-primary" 
-    onclick="location.href='/admin/apartment/<%= selectedApartment._id %>/edit'">
-    Edit Apartment
-    </button>
+
+    <% if (isAdmin) { %>
+      <a role="button" href="/admin/apartment/<%= selectedApartment._id %>/edit">Edit Apartment</a>
+    <% } %>
     </article>
+
     <%- include('partials/footer') %>
 </body>
 </html>
