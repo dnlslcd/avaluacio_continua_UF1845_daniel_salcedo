@@ -27,6 +27,21 @@ const apartmentSchema = new Schema({
         type: String,
         required: true,
     },
+    numberRooms:{
+        type:Number,
+    },
+    numberTotalBeds:{
+        type:Number,
+    },
+    numberBathooms:{
+        type:Number,
+    },
+    maxCapacity:{
+        type:Number,
+    },
+    houseRules:{
+        type: String,
+    },
     services: {
         type: Object,
         default: {
