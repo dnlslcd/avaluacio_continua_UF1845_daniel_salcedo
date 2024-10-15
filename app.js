@@ -13,6 +13,9 @@ const indexRoutes = require("./routes/index.route");
 // importar rutas de administrador
 const adminRoutes = require("./routes/admin.route");
 
+// importar ruta api pública
+const apiRoutes = require("./routes/api.route");
+
 // instancia del servidor Express
 const app = express();
 
@@ -112,6 +115,9 @@ app.use('/admin', (req, res, next) => {
 // rutas de admin.js
 // prefijar las rutas de administrador con '/admin'
 app.use("/admin", adminRoutes);
+
+// rutas de api
+app.use("/api", apiRoutes);
 
 async function connectDB() {
   await mongoose.connect(process.env.MONGODB_URI);
